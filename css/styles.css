@@ -1,0 +1,338 @@
+
+
+app
+{
+	font-family: Roboto;
+	--ac_red: #FE4D4A;
+	--ac_pink:#FEEBEF;
+	--accordion-duration: 1s;
+}
+
+.button
+{
+	background-color: var(--ac_red);
+	border: none;
+	color: white;
+	padding: 13px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: inherit;
+	margin: 4px 2px;
+	cursor: pointer;
+	outline: none;
+	border-radius: 8px;
+}
+.section
+{
+	padding: 3vh 2vw;
+}
+
+filled-range-input, filled-range-input-bubble
+{
+	display: inline;
+	position: relative;
+	border-radius: 8px;
+	padding: 6px;
+}
+
+bubble_tooltip
+{
+	max-width: 300;
+}
+
+.-relative
+{
+	position: relative;
+}
+.-nowrap
+{
+	white-space: nowrap;
+}
+
+.-noselect
+{
+	user-select:none;
+}
+
+.-flex-align-center
+{
+	display: flex;
+	align-items: center;
+}
+
+.-justify-center
+{
+	justify-content: center;	
+}
+.-flex
+{
+	display: flex;
+	
+}
+.-align-baseline
+{
+	align-items: baseline;
+}
+.-row
+{
+	flex-direction: row;
+}
+
+.-column
+{
+	flex-direction: column;
+}
+
+.-flex-grow-1
+{
+	flex-grow: 1;
+}
+
+.-text_25
+{
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 29px;
+}
+
+.-text_22
+{
+	font-size: 22px;
+	line-height: 29px;
+}
+
+.-text_20
+{
+	font-size: 20px;
+	line-height: 23px;
+}
+
+.-text_16
+{
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 400;
+}
+
+.-text_14
+{
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.-text_13
+{
+	font-size: 13px;
+	line-height: 17px;
+}
+
+.-center
+{
+	text-align: center;
+}
+.-white
+{
+	color:white;
+}
+
+.-ac_red
+{
+	color: var(--ac_red);
+}
+
+.-bg_ac_pink
+{
+	background: var(--ac_pink);
+}
+
+.-medium
+{
+	font-weight: 500;
+}
+
+.-bold
+{
+	font-weight: 700;
+}
+
+.-transparent
+{
+	visibility: hidden;
+	opacity:0;	
+}
+
+.-opaque
+{
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+.-width_100
+{
+	width: 100%;
+}
+
+.-max_width_300px
+{
+	max-width: 300px;
+}
+
+.-max_width_640px
+{
+	max-width: 640px;
+}
+
+
+.-max_width_185px
+{
+	width: 185px;
+}
+
+.-margin_auto
+{
+	margin: 0 auto;
+}
+.-width_300px
+{
+	width: 300px;
+}
+
+@media (max-width: 640px) {
+
+	.-mobile_column
+	{
+		flex-direction: column;
+	}
+}
+
+.accordion
+{
+	overflow: hidden;
+	width:100%;
+}
+
+.accordion   .head, .accordion   .foot
+{
+	padding: 24px 0;
+	transition: all var(--accordion-duration);
+	cursor: pointer;
+}
+
+.accordion > .wrapper
+{
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height var(--accordion-duration);
+}
+
+.accordion.-active > .head
+{
+	padding: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.accordion.-active > .wrapper
+{
+	max-height: 200vh;
+}
+
+
+
+.trigger
+{
+	padding: 3px 7px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+
+.coin {
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	background-size: cover;
+	opacity: 0;
+	
+	background-image: url("../img/coin.svg");
+}
+
+.coin_group
+{
+	padding-top: 25px;
+	position: relative;
+}
+
+.coin_group.has_coins {
+	padding-bottom: 75px;
+}
+
+.money_pic {
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+	background-image: url("../img/money-pile.png");
+	margin-bottom:-50px;
+}
+
+.money_pic.pic1
+{
+	background-position-x: 0%;
+}
+
+.money_pic.pic2
+{
+	background-position-x: 25%;
+}
+
+.money_pic.pic3
+{
+	background-position-x: 50%;
+}
+
+.money_pic.pic4
+{
+	background-position-x: 75%;
+}
+
+.money_pic.pic5
+{
+	background-position-x: 100%;
+}
+
+@media (max-width: 640px) {
+
+	.coin_group
+	{
+		padding-top: 15px;
+		position: relative;
+	}
+
+	.coin_group.has_coins {
+		padding-bottom: 45px;
+	}
+
+	.coin {
+		width: 40px;
+		height: 40px;
+	  }
+
+	  .money_pic {
+		background-size: cover;
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		background-image: url("../img/money-pile.png");
+		margin-bottom:-40px;
+	}
+
+	radial-progress
+	{
+		transform: scale(.5);
+	}
+
+}

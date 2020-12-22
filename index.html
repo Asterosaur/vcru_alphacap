@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<title>Alpha Capital invest calc</title>
+<meta charset="utf-8">
+<meta name="author" content="Rustam">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="components/filled_range_input.js" type="module"></script>
+<script src="components/bubble_tooltip.js" type="module"></script>
+<script src="components/radial_progress.js" type="module"></script>
+<script src="js/utils.js" type="module"></script>
+<script src="js/scripts.js" defer type="module"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=1.0">
+
+<body>
+	<app>
+		<!-- <div class="-section" id="section1">
+
+			<div class="-text_22 -medium">Сколько денег вы откладываете в&nbsp;месяц?</div>
+
+			<div class="-text_16" style="padding-top: 11px; padding-bottom:40px;">Ответьте и узнаете, сколько копят
+				другие.</div>
+
+			<bubble-tooltip id="input_bubble" class="-nowrap -text_16 -white -medium" left="0" top="0" padding="10"
+				color="#fe4d4a">
+
+				<span slot="text" id="input_bubble_text">1000 ₽</span>
+
+			</bubble-tooltip>
+
+			<div class="-flex -align-baseline -row -text_18 -relative -medium" style="width: 100%;">
+
+				<div class="-nowrap">0 ₽</div>
+
+				<filled-range-input class="-flex-grow-1" thumb-size="25" min=0 max=50000
+					fill-color="linear-gradient(90deg, #ff9796, #fe4d4a)" thumb-border="8px solid #fe4d4a">
+				</filled-range-input>
+
+				<div class="-nowrap">50 000 ₽</div>
+
+			</div>
+		</div> -->
+
+		<div class="section" id="section1_">
+
+			<div class="-text_22 -medium">Сколько денег вы откладываете в&nbsp;месяц?</div>
+
+			<div class="-text_16" style="padding-top: 11px; padding-bottom:40px;">Ответьте и узнаете, сколько копят
+				другие.</div>
+
+			<div class="-flex -align-baseline -row -text_18 -relative -medium" style="width: 100%;">
+
+				<div class="-nowrap">0 ₽</div>
+
+				<filled-range-input-bubble class="-flex-grow-1" thumb-size="25" min=0 max=50000 currency="₽"
+					fill-color="linear-gradient(90deg, #ff9796, #fe4d4a)" thumb-border="8px solid #fe4d4a">
+				</filled-range-input-bubble>
+
+				<div class="-nowrap">50 000 ₽</div>
+
+			</div>
+		</div>
+
+		<div class="section -transparent" id="section2">
+			<div class="-text_22 -medium">
+				Вы откладываете <span id="monthly_savings" class="-nowrap">8 888</span> ₽ в месяц.
+				<br>
+				За три года вы бы заработали:
+			</div>
+
+			
+
+			<div class="-width_100 -flex -row -mobile_column">
+
+				<div class="-flex-grow-1">
+
+					<div class="coin_group" id="coins_1">
+					</div>
+					<div class="-text_25 -ac_red -nowrap">~<span id="sumSimple">0</span> ₽</div>
+					<div class="-text_16">если откладывать под&nbsp;матрас
+						<span class="trigger -text_13 -ac_red -bg_ac_pink" id="trigger_1">?</span>
+					</div>
+				</div>
+
+				<div class="-flex-grow-1">
+					<div class="coin_group" id="coins_2">
+					</div>
+					<div class="-text_25 -ac_red -nowrap">~<span id="sumDepo">0</span> ₽</div>
+					<div class="-text_16">если откладывать на&nbsp;депозит
+						<span class="trigger -text_13 -ac_red -bg_ac_pink" id="trigger_2">?</span>
+					</div>
+				</div>
+
+				<div class="-flex-grow-1">
+					<div class="coin_group" id="coins_3">
+					</div>
+					<div class="-text_25 -ac_red -nowrap">до ~<span id="sumMultiplied">0</span> ₽</div>
+					<div class="-text_16">если инвестировать в&nbsp;ПИФ
+						<span class="nowrap">«Альфа-Капитала»</span>
+						<span class="trigger -text_13 -ac_red -bg_ac_pink" id="trigger_3">?</span>
+					</div>
+				</div>
+
+			</div>
+
+			<bubble-tooltip id="summary_bubble_1" class="-text_14 -white -medium -max_width_300px" left="0" top="0" padding="10"
+			color="#fe4d4a" trigger="#trigger_1">
+			<span slot="text">В этом мало смысла — такие</br> накопления «съедает» инфляция</span>
+			</bubble-tooltip>
+			
+			<bubble-tooltip id="summary_bubble_2" class="-text_14 -white -medium -max_width_300px" left="0" top="0" padding="10"
+			color="#fe4d4a" trigger="#trigger_2">
+			<span slot="text">Ставки по вкладам различны в разных банках и зависят от многих факторов, в частности, от ключевой ставки Центрального банка РФ<a class ="-white" href="https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#1" target="_blank">¹</a></span>
+			</bubble-tooltip>
+
+			<bubble-tooltip id="summary_bubble_3" class="-text_14 -white -medium -max_width_300px" left="0" top="0" padding="10"
+			color="#fe4d4a" trigger="#trigger_3">
+			<span slot="text">Вы становитесь инвестором набора компаний, который определяют профессиональные управляющие. Они решают, когда покупать и продавать ценные бумаги, чтобы обеспечить инвестиционный доход. Купить или продать паи фонда можно в любой момент<a class ="-white" href="https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#2" target="_blank">²</a></span>
+			</bubble-tooltip>
+		</div>
+
+		<div class="accordion -bg_ac_pink -transparent -center" id="section3">
+
+			<div class="head -text_center -text_16 -flex-align-center -row -justify-center -ac_red">
+				
+				<span>А как в среднем у читателей vc.ru?</span>
+
+				<svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding-left: 15px"> 
+					<path d="M1 1L7.55598 5.95238L14.0892 1" stroke="#FE4D4A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					
+			</div>
+
+			<div class="wrapper">
+				<div class="panel" id="panelSavings">
+					<div class="-flex-align-center -column">
+						<div class="money_pic"></div>
+						<div class="-text_20 -bold -ac_red" style="padding-bottom: 40px;">~ <span id="medianSavings">0</span> ₽</div>
+						<div class="-text_16">в среднем откладывают читатели vc.ru</div>
+					</div>
+
+					<div class="-flex-align-center -column">
+						<div class="-flex-align-center -justify-center" id="#stats">
+						
+						</div>
+
+						<div class="-flex-align-center -justify-center -row  -max_width_640px -width_100 -margin_auto" id="#radials">
+
+							<div class="-flex-align-center -column -max_width_185px -margin_auto" style="padding: 1vw;">
+								<radial-progress id="people1kRadial" size="140" thickness="30" color="#FE4D4A" background="#FEEBEF" ring_color="white" progress="0" speed="50"></radial-progress>
+								<div class="-text_20 -bold -ac_red" style="padding: 18px 0 9px 0;"><span id="people1k">50</span>%</div>
+								<div class="-text_16">читателей откладывают	больше 1000 ₽ в месяц</div>
+							</div>
+
+							<div class="-flex-align-center -column -max_width_185px -margin_auto" style="padding: 1vw;">
+								<radial-progress id="people10kRadial" size="140" thickness="30" color="#FE4D4A" background="#FEEBEF" ring_color="white" progress="0" speed="50"></radial-progress>
+								<div class="-text_20 -bold -ac_red" style="padding: 18px 0 9px 0;"><span id="people10k">7</span>%</div>
+								<div class="-text_16">читателей откладывают	больше 10000 ₽ в месяц</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="foot -text_center -text_16 -flex-align-center -row -justify-center -ac_red">
+				
+					<span>Свернуть</span>
+	
+					<svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding-left: 15px">
+						<path d="M14.0891 5.95242L7.53313 1.00004L0.999928 5.95242" stroke="#FE4D4A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>						
+						
+				</div>
+			</div>
+		</div>
+
+		<div class="section -flex-align-center -justify-center -transparent" id="section4">
+			<span class="-text_16" style="padding-right: 29px;">Как начать инвестировать?</span> <a href="https://alfabank.ru/make-money/investments/"><button class="button">Узнать</button></a>
+		</div>
+	</app>
+</body>
+
+</html>
